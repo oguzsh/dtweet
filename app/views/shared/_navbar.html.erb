@@ -21,11 +21,21 @@
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
       </ul>
-      <% if @user %>
+
+      <% if Current.user %>
         <div class="d-flex align-items-center">
-          <p class="mx-2"><%= @user.email %></p>
-          <%= button_to "Logout", logout_path, class: "btn btn-outline-success", method: :delete %>
+          <p class="mx-2"><%= Current.user.email %></p>
+          <%= button_to "Logout", logout_path, class: "btn btn-outline-danger", method: :delete %>
         </div>
+        <% else %>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to "Sign In", sign_in_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
+          </li>
+        </ul>
       <% end %>
     </div>
   </div>
