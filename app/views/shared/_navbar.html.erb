@@ -22,20 +22,18 @@
         </li>
       </ul>
 
-      <% if Current.user %>
-        <div class="d-flex align-items-center">
-          <p class="mx-2"><%= Current.user.email %></p>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if Current.user %>
+          <%= link_to Current.user.email, edit_password_path, class: 'mx-2 nav-link' %>
           <%= button_to "Logout", logout_path, class: "btn btn-outline-danger", method: :delete %>
-        </div>
         <% else %>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <%= link_to "Sign In", sign_in_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
           </li>
-        </ul>
+      </ul>
       <% end %>
     </div>
   </div>
