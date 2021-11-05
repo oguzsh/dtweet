@@ -23,15 +23,17 @@
       </ul>
 
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <% if Current.user %>
-          <%= link_to Current.user.email, edit_password_path, class: 'mx-2 nav-link' %>
-          <%= button_to "Logout", logout_path, class: "btn btn-outline-danger", method: :delete %>
+        <% if user_signed_in? %>
+          <span class="mx-2 nav-link">
+            Welcome <%= current_user.email %>
+          </span>
+          <%= link_to "Logout", destroy_user_session_path, class: "btn btn-outline-danger", method: :delete %>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Sign In", sign_in_path, class: "nav-link" %>
+            <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
           </li>
       </ul>
       <% end %>
