@@ -1,0 +1,17 @@
+<%= form_with model: tweet do |form| %>
+  <%= render 'shared/form_errors', form: form %>
+
+  <div class="mb-3">
+    <%= form.label :body %>
+    <%= form.text_area :body, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :publish_at %>
+    <%= form.datetime_select :publish_at, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3 d-flex">
+    <%= form.button "Schedule", class: "btn btn-primary" %>
+  </div>
+<% end %>

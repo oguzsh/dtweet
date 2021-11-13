@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-between align-items-center my-2">
+  <h1>Tweets</h1>
+
+  <% if current_user %>
+    <%= link_to "Schedule a Tweet", new_tweet_path, class: 'btn btn-primary' %>
+    <% else %>
+    <%= link_to "Connect your twitter account", user_twitter_omniauth_authorize_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<%= render @tweets %>

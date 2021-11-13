@@ -26,6 +26,7 @@ gem 'activerecord-session_store'
 gem 'devise'
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-twitter'
+gem 'twitter'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
