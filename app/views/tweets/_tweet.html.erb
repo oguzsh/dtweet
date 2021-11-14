@@ -1,6 +1,5 @@
 <div class="mb-3">
   <div class="card">
-
     <div class="card-header d-flex justify-content-between">
       <%= tweet.user.name %>
       <%= link_to "@#{tweet.user.username}", "https://twitter.com/#{tweet.user.username}", target: "_blank" %>
@@ -14,6 +13,7 @@
 
     <div class="card-footer d-flex justify-content-between">
       <% if tweet.published? %>
+        <% tweet.exists %>
         <%= link_to "View Tweet", "https://twitter.com/#{tweet.user.username}/status/#{tweet.tweet_id}", target: "_blank" %>
       <% else %>
         Scheduled for <%= localize tweet.publish_at, format: :short %>
