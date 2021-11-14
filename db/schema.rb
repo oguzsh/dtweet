@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_11_12_201852) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "sessions", force: :cascade do |t|
     t.string "session_id", null: false
     t.text "data"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_11_12_201852) do
   end
 
   create_table "tweets", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.text "body"
     t.datetime "publish_at"
     t.string "tweet_id"
