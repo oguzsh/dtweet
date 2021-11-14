@@ -32,7 +32,7 @@
           <%= link_to "Logout", destroy_user_session_path, class: "btn btn-outline-danger", method: :delete %>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Connect with Twitter", user_twitter_omniauth_authorize_path, method: :post, class: 'btn bg-primary text-white' %>
+            <%= button_to "Connect with Twitter", user_twitter_omniauth_authorize_path, method: :post, class: 'btn bg-primary text-white' %>
           </li>
       </ul>
       <% end %>
