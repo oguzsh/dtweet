@@ -1,6 +1,5 @@
 class Tweet < ApplicationRecord
   belongs_to :user
-
   validates :body, length: { minimum: 1, maximum: 200 }
   validates :publish_at, presence: true
 
@@ -15,5 +14,11 @@ class Tweet < ApplicationRecord
   def publish_to_twitter!
     tweet = user.twitter_client.update(body)
     update(tweet_id: tweet.id)
+  end
+
+  def exists
+    user.twitter_client.status(tweet_id)
+  rescue Twitter::Error::NotFound
+    destroy
   end
 end
