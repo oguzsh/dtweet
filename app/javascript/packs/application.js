@@ -8,6 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+const set_timezone_cookie = () => {
+  document.cookie = `browser_timezone=${Intl.DateTimeFormat().resolvedOptions().timeZone}`
+}
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+set_timezone_cookie()
