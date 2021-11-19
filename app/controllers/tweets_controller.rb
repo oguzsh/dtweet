@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :user_signed_in
-  before_action :set_tweet, only: %i[show edit update destroy]
+  before_action :set_tweet, only: %i[edit update destroy]
 
   def index
     @tweets = current_user.tweets
