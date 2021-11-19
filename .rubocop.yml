@@ -1,0 +1,42 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0.0
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'vendor/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+  Max: 120
+
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
+  Max: 250
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 30
+Metrics/ModuleLength:
+  Max: 250
+  Exclude:
+    - 'spec/**/*'
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
