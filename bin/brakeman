@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# This binstub ensures that you are running the latest version of Brakeman.
+
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "brakeman", Gem.latest_version_for("brakeman")
+end
+
+load Gem.bin_path("brakeman", "brakeman")

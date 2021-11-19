@@ -67,3 +67,4 @@ gem 'react-rails'
 gem 'rubocop', '~> 1.23', require: false
 gem 'rubocop-rails', require: false
 gem 'sidekiq', '~> 6.3'
+gem 'brakeman'
