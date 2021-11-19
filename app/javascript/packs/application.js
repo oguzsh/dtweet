@@ -6,13 +6,15 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+import ReactRailsUJS from 'react_ujs';
+import Utils from '../helpers/utils'
 import "channels"
 
-const set_timezone_cookie = () => {
-  document.cookie = `browser_timezone=${Intl.DateTimeFormat().resolvedOptions().timeZone}`
-}
+// Support component names relative to this directory:
+var componentRequireContext = require.context("components", true);
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-set_timezone_cookie()
+Utils.setTimezone()
+ReactRailsUJS.useContext(componentRequireContext);
