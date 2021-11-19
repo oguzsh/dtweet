@@ -19,5 +19,6 @@ module ScheduledTweets
 
     config.active_record.default_timezone = :local
     # config.eager_load_paths << Rails.root.join("extras")
+    config.react.server_renderer_extensions = ["jsx", "js", "tsx", "ts"]
   end
 end
