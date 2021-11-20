@@ -49,6 +49,9 @@ jobs:
           POSTGRES_USER: myapp
           POSTGRES_DB: myapp_test
           POSTGRES_PASSWORD: ""
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          TWITTER_API_PUBLIC_KEY: ${{ secrets.TWITTER_API_PUBLIC_KEY }}
+          TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
         ports: ["5432:5432"]
 
     steps:
@@ -83,6 +86,9 @@ jobs:
           RAILS_ENV: test
           PGHOST: localhost
           PGUSER: myapp
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          TWITTER_API_PUBLIC_KEY: ${{ secrets.TWITTER_API_PUBLIC_KEY }}
+          TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
         run: |
           bundle exec bin/rails db:setup
 
