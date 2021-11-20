@@ -82,18 +82,5 @@ jobs:
         run: |
           yarn install --pure-lockfile
 
-      - name: Setup test database
-        env:
-          RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: myapp
-          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-          TWITTER_API_PUBLIC_KEY: ${{ secrets.TWITTER_API_PUBLIC_KEY }}
-          TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
-          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
-        run: |
-          bundle exec bin/rails db:setup
-          echo(${{ secrets.RAILS_MASTER_KEY }})
-
       - name: Run tests
         run: bundle exec bin/rspec
