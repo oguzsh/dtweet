@@ -11,7 +11,7 @@ import Utils from '../helpers/utils'
 import "channels"
 
 // Style
-import "../application.css"
+import "stylesheets/application"
 
 // Support component names relative to this directory:
 var componentRequireContext = require.context("components", true);
