@@ -1,7 +1,9 @@
-
 <div class="mt-4">
-  <%= link_to "Back to Tweets", tweets_path, class:"btn btn-outline-secondary mb-4" %>
-  <h1>Edit Tweet</h1>
+  <%= link_to "Back to Tweets", tweets_path, class:"bg-gray-200 text-grey py-2 px-4 rounded-lg cursor-pointer" %>
+
+  <div class="my-8">
+    <h1 class="text-4xl mb-6">Edit Tweet</h1>
+    <%= render 'form', tweet: @tweet %>
+  </div>
 </div>
 
-<%= render 'form', tweet: @tweet %>

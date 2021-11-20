@@ -1,11 +1,17 @@
-<div class="d-flex justify-content-between align-items-center my-2">
-  <h1>Tweets</h1>
+<div class="flex justify-between items-center mt-8 mb-4">
+  <h1 class="text-4xl">Tweets</h1>
 
-  <% if current_user %>
-    <%= link_to "Schedule a Tweet", new_tweet_path, class: 'btn btn-primary' %>
-    <% else %>
-    <%= link_to "Connect your twitter account", user_twitter_omniauth_authorize_path, class: 'btn btn-primary' %>
+  <% if current_user && !@tweets.to_a.empty? %>
+    <%= link_to "Schedule a Tweet", new_tweet_path, class: 'bg-lightblue text-white py-3 px-4 rounded-lg cursor-pointer' %>
   <% end %>
 </div>
 
-<%= render @tweets %>
+<% if @tweets.to_a.empty? %>
+  <div class="max-w-lg mx-auto mt-16 text-center max-w-sm">
+    <h1 class="mb-8 text-black text-4xl">Your tweet list is empty</h1>
+    <p class="mb-8 text-grey text-base">Looks like there are no tweets in your list at the moment.</p>
+    <%= link_to "Let's schedule your first tweet!", new_tweet_path, class: 'bg-lightblue text-white py-3 px-4 rounded-lg cursor-pointer' %>
+  </div>
+<% else %>
+  <%= render @tweets %>
+<% end %>
