@@ -24,5 +24,8 @@ module.exports = {
             },
             spacing: {}
         }
-    }
+    },
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
 }
