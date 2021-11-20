@@ -8,6 +8,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
+    "@tailwindcss/forms": "^0.3.4",
     "@types/react": "^17.0.35",
     "@types/react-dom": "^17.0.11",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
@@ -22,6 +23,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "webpack-dev-server": "^3"
   }
 }
