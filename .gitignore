@@ -40,3 +40,5 @@ yarn-debug.log*
 .yarn-integrity
 .idea/
 /config/credentials/development.key
+
+/config/credentials/test.key

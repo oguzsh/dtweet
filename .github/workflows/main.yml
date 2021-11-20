@@ -34,10 +34,10 @@ jobs:
 
       - name: Run linters
         run: |
-          bin/rubocop --parallel
+          bundle exec bin/rubocop --parallel
       - name: Run security checks
         run: |
-          bin/brakeman -q -w2
+          bundle exec bin/brakeman -q -w2
 
   tests:
     name: Tests
@@ -49,6 +49,10 @@ jobs:
           POSTGRES_USER: myapp
           POSTGRES_DB: myapp_test
           POSTGRES_PASSWORD: ""
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          TWITTER_API_PUBLIC_KEY: ${{ secrets.TWITTER_API_PUBLIC_KEY }}
+          TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
+          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
         ports: ["5432:5432"]
 
     steps:
@@ -78,13 +82,5 @@ jobs:
         run: |
           yarn install --pure-lockfile
 
-      - name: Setup test database
-        env:
-          RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: myapp
-        run: |
-          bin/rails db:setup
-
       - name: Run tests
-        run: bin/rspec
+        run: bundle exec bin/rspec
