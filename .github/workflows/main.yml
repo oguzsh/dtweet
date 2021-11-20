@@ -34,10 +34,10 @@ jobs:
 
       - name: Run linters
         run: |
-          sudo bin/rubocop --parallel
+          bundle exec bin/rubocop --parallel
       - name: Run security checks
         run: |
-          sudo bin/brakeman -q -w2
+          bundle exec bin/brakeman -q -w2
 
   tests:
     name: Tests
@@ -84,7 +84,7 @@ jobs:
           PGHOST: localhost
           PGUSER: myapp
         run: |
-          sudo bin/rails db:setup
+          bundle exec bin/rails db:setup
 
       - name: Run tests
-        run: bin/rspecrspec
+        run: bundle exec bin/rspec
