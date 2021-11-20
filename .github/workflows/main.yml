@@ -91,6 +91,7 @@ jobs:
           TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
         run: |
           bundle exec bin/rails db:setup
+          echo(${{ secrets.RAILS_MASTER_KEY }})
 
       - name: Run tests
         run: bundle exec bin/rspec
