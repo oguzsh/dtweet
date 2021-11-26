@@ -12,6 +12,8 @@ module ApplicationHelper
       doc = "<!== SVG #{filename} not found -->"
     end
 
-    doc.to_html.html_safe
+    # rubocop:disable Rails/OutputSafety
+    raw doc
+    # rubocop:enable Rails/OutputSafety
   end
 end
