@@ -18,7 +18,9 @@
     <%= render partial: "shared/navbar" %>
     <div class="container mx-auto antialiased">
       <%= render partial: "shared/flash" %>
-      <%= yield %>
+      <div class="lg:mt-24 mt-12 p-4">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
