@@ -12,6 +12,6 @@ module ApplicationHelper
       doc = "<!== SVG #{filename} not found -->"
     end
 
-    raw doc
+    doc.to_html.html_safe
   end
 end
