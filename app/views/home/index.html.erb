@@ -1,3 +1,73 @@
-<div>
-  <h1>Welcome to the main page</h1>
+<div class="grid grid-rows-1">
+  <div class="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:mb-64 mb-32 lg:text-left text-center">
+    <div class="lg:text-left text-center">
+      <h1 class="lg:text-6xl text-5xl lg:w-10/12 xs:w-full font-primary tracking-tight leading-none">
+        Schedule your tweets and leave the rest to us!
+      </h1>
+      <p class="text-2xl font-secondary text-grey tracking-tight mt-8 leading-10">
+        Let’s use Twitter to its maximum utility with Dtweet’s Tweet scheduler and automation tool. Gain more engagement
+        every time you post.
+      </p>
+      <%= button_to "Get Started", user_twitter_omniauth_authorize_path, method: :post, class: 'font-primary bg-lightblue text-white mt-12 py-6 px-24 rounded-lg cursor-pointer transition duration-150 ease-in-out transform hover:-translate hover:scale-105' %>
+    </div>
+    <div class="flex items-center justify-center lg:inline-grid hidden">
+      <%= embedded_svg('face_with_glasses', class: 'object-cover lg:motion-safe:animate-bounce') %>
+    </div>
+  </div>
+  <div class="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:mb-64 mb-32 lg:text-left text-center">
+    <div class="lg:order-1 order-2">
+      <h1 class="lg:text-6xl text-5xl lg:w-10/12 xs:w-full font-primary tracking-tight leading-none">
+        Easy to use!
+      </h1>
+      <p class="text-2xl font-secondary text-grey tracking-tight mt-8 leading-10">
+        Grow your twitter account with the <span class="font-primary text-black">d<span class="text-lightblue">t</span>weet</span> built for more engagement!
+      </p>
+      <%= button_to "Schedule your first post now ", user_twitter_omniauth_authorize_path, method: :post, class: 'bg-transparent font-primary text-lightblue mt-8 py-6 cursor-pointer transition duration-150 ease-in-out transform hover:-translate hover:scale-105' %>
+    </div>
+    <div class="flex items-center justify-center lg:order-2">
+      <%= embedded_svg('magic_wand') %>
+    </div>
+  </div>
+  <div class="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:mb-64 mb-32 lg:text-left text-center">
+    <div class="flex items-center justify-center">
+      <%= embedded_svg('bullseye') %>
+    </div>
+    <div>
+      <h1 class="text-6xl lg:w-10/12 xs:w-full font-primary tracking-tight leading-none">
+        Statistics
+      </h1>
+      <p class="text-2xl font-secondary text-grey tracking-tight mt-8 leading-10">
+        See how you are doing! Get data on published posts, see likes, retweets, shares, and views.
+      </p>
+      <%= button_to "Schedule your first post now", user_twitter_omniauth_authorize_path, method: :post, class: 'bg-transparent font-primary text-lightblue mt-8 py-6 cursor-pointer transition duration-150 ease-in-out transform hover:-translate hover:scale-105' %>
+    </div>
+  </div>
+  <div class="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:mb-64 mb-32 lg:text-left text-center">
+    <div class="lg:order-1 order-2">
+      <h1 class="lg:text-6xl text-4xl w-full font-primary tracking-tight leading-12">
+        Photo, Video and GIF Sharing
+      </h1>
+      <p class="text-2xl font-secondary text-grey tracking-tight mt-8 leading-10">
+        Liven up your posts by adding media. Add up to 4 photos per post or 1 video. It's a proven fact that posts with images get more engagement.
+      </p>
+      <%= button_to "Share your first image tweet", user_twitter_omniauth_authorize_path, method: :post, class: 'bg-transparent font-primary text-lightblue mt-8 py-6 cursor-pointer transition duration-150 ease-in-out transform hover:-translate hover:scale-105' %>
+    </div>
+    <div class="flex items-center justify-center lg:order-2 order-1">
+      <%= embedded_svg('frame') %>
+    </div>
+  </div>
+  <div class="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:mb-64 mb-32 lg:text-left text-center">
+    <div class="flex items-center justify-center">
+      <%= embedded_svg('crystal_ball') %>
+    </div>
+    <div>
+      <h1 class="lg:text-6xl text-5xl w-full font-primary tracking-tight leading-none">
+        Archive your <span class="text-lightblue">tweets</span>
+      </h1>
+      <p class="text-2xl font-secondary text-grey tracking-tight mt-8 leading-10">
+        View a 60 day archive of all your past messages. Easily repost past messages.
+      </p>
+      <%= button_to "Let's archive your first tweet ", user_twitter_omniauth_authorize_path, method: :post, class: 'bg-transparent font-primary text-lightblue mt-8 py-6 cursor-pointer transition duration-150 ease-in-out transform hover:-translate hover:scale-105' %>
+    </div>
+  </div>
 </div>

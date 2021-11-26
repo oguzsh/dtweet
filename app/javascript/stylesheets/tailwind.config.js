@@ -1,4 +1,7 @@
 module.exports = {
+    variants: {
+        animation: ['responsive', 'motion-safe', 'motion-reduce']
+    },
     theme: {
         screens: {
             sm: '640px',
