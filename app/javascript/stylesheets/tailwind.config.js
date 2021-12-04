@@ -1,4 +1,5 @@
 module.exports = {
+    darkMode: 'media',
     variants: {
         animation: ['responsive', 'motion-safe', 'motion-reduce']
     },
