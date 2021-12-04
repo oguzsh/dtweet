@@ -1,18 +1,18 @@
 <div class="my-3">
-  <div class="border-2 border-gray-200 rounded">
+  <div class="bg-white border-2 border-gray-200 rounded dark:text-white dark:bg-transparent dark:border-lightblue">
       <!-- card header -->
-      <div class="px-6 py-4 bg-white border-b border-gray-200 font-bold uppercase">
+      <div class="px-6 py-4 border-b border-gray-200 font-bold uppercase">
         <h4 class="block text-lg"><%= tweet.user.name %></h4>
         <%= link_to "@#{tweet.user.username}", "https://twitter.com/#{tweet.user.username}", class: 'text-xs text-lightblue text-gray', target: "_blank" %>
       </div>
 
       <!-- card body -->
-      <div class="p-6 text-gray-600 break-words">
+      <div class="p-6 text-gray-600 break-words dark:text-white">
         <%= tweet.body %>
       </div>
 
       <!-- card footer -->
-      <div class="p-6 bg-white border-gray-200 text-right">
+      <div class="p-6 border-gray-200 text-right">
         <% if tweet.published? %>
           <% tweet.exists %>
          <div class="flex justify-between items-center">
@@ -23,12 +23,12 @@
          </div>
         <% else %>
          <div class="flex justify-between">
-           <span class="inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-sm font-bold mr-3">
-             Scheduled for <%= localize tweet.publish_at, format: :short %>
+           <span class="inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-sm font-bold mr-3 border-2 dark:border-white dark:bg-transparent dark:text-white">
+             Scheduled for <%= l tweet.publish_at, format: :short %>
            </span>
            <div class="buttons">
-             <%= link_to "Edit", edit_tweet_path(tweet), class: 'mx-1 bg-yellow-200 text-yellow-600 py-2 px-6 rounded-lg cursor-pointer' %>
-             <%= link_to "Delete", tweet_path(:id => tweet.id), :data => { :confirm => 'Are you sure?' }, :method => :delete, class: 'mx-1 bg-gray-200 text-gray-600 py-2 px-4 rounded-lg cursor-pointer' %>
+             <%= link_to "Edit", edit_tweet_path(tweet), class: 'mx-1 bg-yellow-200 text-yellow-600 py-2 px-6 rounded-lg border-2 cursor-pointer dark:border-yellow-200 dark:bg-transparent dark:text-yellow-200' %>
+             <%= link_to "Delete", tweet_path(:id => tweet.id), :data => { :confirm => 'Are you sure?' }, :method => :delete, class: 'mx-1 bg-gray-200 text-gray-600 py-2 px-4 rounded-lg cursor-pointer border-2 dark:border-white dark:bg-transparent dark:text-white' %>
            </div>
          </div>
         <% end %>

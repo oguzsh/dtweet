@@ -2,12 +2,12 @@
   <%= render 'shared/form_errors', form: form %>
 
   <div class="my-6">
-    <%= form.label :body %>
+    <%= form.label :body, class:'dark:text-white' %>
     <%= form.text_area :body, class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0' %>
   </div>
 
   <div class="my-6">
-    <%= form.label :publish_at, class: 'block' %>
+    <%= form.label :publish_at, class: 'block dark:text-white' %>
     <%= form.datetime_select :publish_at, class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0' %>
   </div>
 
