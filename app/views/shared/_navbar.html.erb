@@ -11,7 +11,7 @@
     <div id="menu" class="w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden">
       <div class="text-base lg:flex-grow">
         <%= link_to "Home", root_path, class: "block lg:inline-block py-3 px-8 hover:text-grey" %>
-        <span class="block lg:inline-block py-3 px-8 text-grey">Features ( Soon )</span>
+        <span class="block lg:inline-block py-3 px-8"><a href="/#features">Features</a></span>
         <%= link_to "Contact", "mailto:oguzhan824@gmail.com", class: "block lg:inline-block py-3 px-8 hover:text-grey" %>
         <% if user_signed_in? %>
           <%= link_to "My Tweets", tweets_path, class: "block lg:inline-block py-3 px-8 hover:text-grey" %>
