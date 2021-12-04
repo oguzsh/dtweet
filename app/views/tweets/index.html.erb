@@ -1,5 +1,5 @@
 <div class="flex justify-between items-center mt-8 mb-4">
-  <h1 class="text-4xl">Tweets</h1>
+  <h1 class="text-4xl dark:text-white">Tweets</h1>
 
   <% if current_user && !@tweets.to_a.empty? %>
     <%= link_to "Schedule a Tweet", new_tweet_path, class: 'bg-lightblue text-white py-3 px-4 rounded-lg cursor-pointer' %>
