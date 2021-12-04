@@ -29,9 +29,9 @@ gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-twitter'
 
+gem 'meta-tags'
 gem 'react-rails'
 gem 'twitter'
-gem 'meta-tags'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
