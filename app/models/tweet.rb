@@ -8,6 +8,11 @@ class Tweet < ApplicationRecord
   end
 
   after_save_commit do
+    if publish_at < 10.minutes.ago
+      update(publish_at: Time.current)
+      TweetJob.set(wait_until: publish_at).perform_later(self)
+    end
+
     TweetJob.set(wait_until: publish_at).perform_later(self) if publish_at_previously_changed?
   end
 
